@@ -1,0 +1,25 @@
+{
+  "name": "advent-of-code-2022",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "code": "ts-node --esm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Parkreiner/advent-of-code-2022.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Parkreiner/advent-of-code-2022/issues"
+  },
+  "homepage": "https://github.com/Parkreiner/advent-of-code-2022#readme",
+  "devDependencies": {
+    "ts-node": "^10.9.1"
+  }
+}
