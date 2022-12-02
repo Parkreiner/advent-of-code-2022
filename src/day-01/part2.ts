@@ -38,13 +38,13 @@ function updateTopThree(topThree: number[], newEntry: number): void {
 
 let current = 0;
 let index = -1;
-lineReader.on("line", (line) => {
+for await (const line of lineReader) {
   index++;
 
   if (line === "") {
     updateTopThree(topThree, current);
     current = 0;
-    return;
+    continue;
   }
 
   const int = parseInt(line, 10);
@@ -55,8 +55,6 @@ lineReader.on("line", (line) => {
       `Provided value ${line} on line ${index} is not in valid format`
     );
   }
-});
+}
 
-lineReader.on("close", () => {
-  console.log(topThree.reduce((x, y) => x + y, 0));
-});
+console.log(topThree.reduce((x, y) => x + y, 0));
