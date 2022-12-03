@@ -88,18 +88,6 @@ for await (const line of lines) {
   assertOpponentChar(opponentChar);
   assertOutcomeChar(outcomeChar);
 
-  console.log({
-    lineNum,
-    opponentChar,
-    opponentChoice: opponentAliases[opponentChar],
-    outcomeChar,
-    neededOutcome: outcomeAliases[outcomeChar],
-    points: calcRoundScore(
-      opponentAliases[opponentChar],
-      outcomeAliases[outcomeChar]
-    ),
-  });
-
   yourScore += calcRoundScore(
     opponentAliases[opponentChar],
     outcomeAliases[outcomeChar]
