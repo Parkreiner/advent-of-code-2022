@@ -1,5 +1,5 @@
 import { createLineReader, RelativeTxtPath } from "../_utils/fileIo.js";
-const FILE_NAME = "./input.txt" satisfies RelativeTxtPath;
+const FILE_NAME = "./example.txt" satisfies RelativeTxtPath;
 
 type Assignment = [number, number];
 
@@ -47,7 +47,7 @@ function parseIntoAssignments(line: string): [Assignment, Assignment] {
 const lineReader = createLineReader(import.meta.url, FILE_NAME);
 
 let lineIndex = 0;
-let fullOverlapCount = 0;
+let overlapCount = 0;
 
 try {
   for await (const line of lineReader) {
@@ -55,13 +55,13 @@ try {
     if (!line) continue;
 
     if (isPartialOverlap(...parseIntoAssignments(line))) {
-      fullOverlapCount++;
+      overlapCount++;
     }
   }
-} catch (err: unknown) {
-  console.log(`Encountered error ${err} on line ${lineIndex}`);
-}
 
-console.log(
-  `After processing ${lineIndex} lines, there were ${fullOverlapCount} assignment(s) with full overlaps`
-);
+  console.log(
+    `After processing ${lineIndex} lines, there were ${overlapCount} assignment(s) with partial overlaps`
+  );
+} catch (err: unknown) {
+  console.error(`Encountered error on line ${lineIndex}: ${err}`);
+}
