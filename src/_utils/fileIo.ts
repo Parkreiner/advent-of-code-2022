@@ -3,6 +3,8 @@ import path from "path";
 import readline from "readline";
 import { fileURLToPath } from "url";
 
+export type RelativeTxtPath = `./${string}.txt`;
+
 export function createLineReader(
   metaUrl: string,
   relativePath: string
