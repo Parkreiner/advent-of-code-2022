@@ -5,15 +5,17 @@ import { fileURLToPath } from "url";
 
 export type RelativeTxtPath = `./${string}.txt`;
 
+export function getAbsolutePath(metaUrl: string, relativePath: string): string {
+  const __dirname = path.dirname(fileURLToPath(metaUrl));
+  return path.resolve(__dirname, relativePath);
+}
+
 export function createLineReader(
   metaUrl: string,
   relativePath: string
 ): readline.Interface {
-  const __dirname = path.dirname(fileURLToPath(metaUrl));
-  const absolutePath = path.resolve(__dirname, relativePath);
-
   return readline.createInterface({
-    input: fs.createReadStream(absolutePath),
+    input: fs.createReadStream(getAbsolutePath(metaUrl, relativePath)),
     terminal: false,
   });
 }
