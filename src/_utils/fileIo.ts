@@ -3,7 +3,7 @@ import path from "path";
 import readline from "readline";
 import { fileURLToPath } from "url";
 
-export type RelativeTxtPath = `./${string}.txt`;
+export type RelativeTxtPath = `./${"input" | "example"}.txt`;
 
 export function getAbsolutePath(metaUrl: string, relativePath: string): string {
   const __dirname = path.dirname(fileURLToPath(metaUrl));
