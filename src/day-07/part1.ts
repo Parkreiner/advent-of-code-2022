@@ -1,8 +1,8 @@
 import { readFile } from "fs/promises";
 import { getAbsolutePath, RelativeTxtPath } from "../_utils/fileIo.js";
-import { Directory } from "./types";
+import { Directory } from "./types.js";
 
-const FILENAME = `./input.txt` satisfies RelativeTxtPath;
+const FILENAME = `./example.txt` satisfies RelativeTxtPath;
 const REGEXES = {
   commands: {
     cd: /^\$ cd *(\/|\.\.|[^\s\W]\w*)$/,

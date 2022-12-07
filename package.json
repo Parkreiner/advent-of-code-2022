@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "code": "ts-node --esm"
+    "code": "ts-node --esm",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",

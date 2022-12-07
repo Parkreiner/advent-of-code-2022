@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "ES2022",
-    "outDir": "output",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "outDir": "./dist",
 
-    "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true,
     "allowJs": false,
     "declaration": false,
