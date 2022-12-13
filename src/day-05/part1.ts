@@ -11,12 +11,11 @@ function parseStackLines(lines: readonly string[]): Map<string, string[]> {
   }
 
   const labels = lines.at(-1)?.trim().split(/\s+/);
-  const mapEntries = labels?.map((l): [string, string[]] => [l, []]);
-
-  if (!mapEntries) {
+  if (!labels) {
     throw new Error(`Unable to create entries from label line`);
   }
 
+  const mapEntries = labels.map((l): [string, string[]] => [l, []]);
   for (let i = lines.length - 2; i >= 0; i--) {
     const line = lines[i] as string;
 
@@ -53,7 +52,7 @@ for (const line of instructionLines) {
 
   const [, rawQty, source, target] = instructionMatcher.exec(line) ?? [];
   if (rawQty == null || source == null || target == null) {
-    throw new Error("Unable to parse ");
+    throw new Error("Unable to parse full data from text line");
   }
 
   const quantity = parseInt(rawQty, 10);

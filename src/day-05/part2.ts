@@ -49,12 +49,12 @@ if (!stackLines || !instructionLines) {
 const allStacks = parseStackLines(stackLines);
 const moverStack: string[] = [];
 
-for (const line of instructionLines) {
+for (const [index, line] of instructionLines.entries()) {
   if (!line) continue;
 
   const [, rawQty, source, target] = instructionMatcher.exec(line) ?? [];
   if (rawQty == null || source == null || target == null) {
-    throw new Error("Unable to parse ");
+    throw new Error(`Unable to parse full data for line ${index + 1}`);
   }
 
   const quantity = parseInt(rawQty, 10);
