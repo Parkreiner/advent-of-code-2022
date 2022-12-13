@@ -1,27 +1,25 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
+    "target": "ES2020",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
     "outDir": "./dist",
 
     "allowSyntheticDefaultImports": true,
-    "allowJs": false,
+    "forceConsistentCasingInFileNames": true,
     "declaration": false,
     "sourceMap": true,
-    "esModuleInterop": true,
-
-    "forceConsistentCasingInFileNames": true,
+    "removeComments": true,
+    "skipLibCheck": true,
 
     "strict": true,
     "useUnknownInCatchVariables": true,
-    "alwaysStrict": true,
-
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": true,
-    "skipLibCheck": true
 
+    "noUncheckedIndexedAccess": true,
+    "allowJs": false
     // "noUnusedLocals": true,
     // "noUnusedParameters": true,
     // "allowUnreachableCode": false,
