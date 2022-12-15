@@ -1,7 +1,7 @@
 import { readFile } from "fs/promises";
 import { getAbsolutePath, RelativeTxtPath } from "../_utils/fileIo.js";
 
-/** "#" is a lit pixel, "." is an unlit pixel */
+/** "█" is a lit pixel, "." is an unlit pixel */
 type Pixel = "█" | ".";
 
 const FILE_NAME = "./input.txt" satisfies RelativeTxtPath;
