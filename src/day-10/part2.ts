@@ -2,7 +2,7 @@ import { readFile } from "fs/promises";
 import { getAbsolutePath, RelativeTxtPath } from "../_utils/fileIo.js";
 
 /** "#" is a lit pixel, "." is an unlit pixel */
-type Pixel = "#" | ".";
+type Pixel = "█" | ".";
 
 const FILE_NAME = "./input.txt" satisfies RelativeTxtPath;
 
@@ -47,7 +47,7 @@ function paintPixelsByCycle(cycleLines: readonly string[]): string {
         spriteMidpointPosition + 1,
       ];
 
-      const newPixel = allSpritePositions.includes(pixelPosition) ? "#" : ".";
+      const newPixel = allSpritePositions.includes(pixelPosition) ? "█" : ".";
       currentCrtLine.push(newPixel);
     }
 
