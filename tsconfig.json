@@ -19,10 +19,10 @@
     "noFallthroughCasesInSwitch": true,
 
     "noUncheckedIndexedAccess": true,
-    "allowJs": false
-    // "noUnusedLocals": true,
-    // "noUnusedParameters": true,
-    // "allowUnreachableCode": false,
+    "allowJs": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "allowUnreachableCode": false
   },
   "include": ["./src/"]
 }
